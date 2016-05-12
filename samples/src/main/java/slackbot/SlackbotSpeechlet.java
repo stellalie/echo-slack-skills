@@ -59,7 +59,8 @@ public class SlackbotSpeechlet implements Speechlet {
         // Ready for delivery? Listen
         if (session.getAttributes().containsKey(SESSION_STAGE)) {
             if ((Integer) session.getAttribute(SESSION_STAGE) == READY_FOR_DELIVERY) {
-                return handleSetupTheMessageIntent(session);
+                String message = (intent != null) ? intent.getSlot("TheMessage").getValue() : "";
+                return handleSetupTheMessageIntent(session, message);
             }
         }
 
@@ -113,15 +114,10 @@ public class SlackbotSpeechlet implements Speechlet {
         return response;
     }
 
-    /**
-     * Responds to the user saying "Who's there".
-     *
-     * @param session
-     *            the session object
-     * @return SpeechletResponse the speechlet response
-     */
-    private SpeechletResponse handleSetupTheMessageIntent(final Session session) {
-        String speechOutput = "OK. Slack message sent now. Happy day!";
+    private SpeechletResponse handleSetupTheMessageIntent(final Session session, final String message) {
+        String speechOutput = "OK. Your message is " + message + ". Slack message sent now. Happy day!";
+
+        // TODO: Just do slack integration here! `message` variable and just send maybe to a channel
 
         SimpleCard card = new SimpleCard();
         card.setTitle("Slack Bot");
