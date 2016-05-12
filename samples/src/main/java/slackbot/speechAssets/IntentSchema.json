@@ -1,0 +1,22 @@
+{
+  "intents": [
+    {
+      "intent": "CanYouSendSlackMessageIntent"
+    },
+    {
+      "intent": "SetupTheMessageIntent",
+      "slots":[
+        {
+          "name": "TheMessage",
+          "type": "LITERAL"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+CanYouSendSlackMessageIntent can you send a message
+CanYouSendSlackMessageIntent can you send a slack message
+CanYouSendSlackMessageIntent can you slack please
+CanYouSendSlackMessageIntent can you slack
+CanYouSendSlackMessageIntent send slack
+
+SetupTheMessageIntent {TheMessage}
